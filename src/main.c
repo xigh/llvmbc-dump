@@ -19,7 +19,7 @@ int main(int argc, char **argv)
     byte *data;
     int64_t sz;
 
-    if (argc != 3) {
+    if (argc != 2) {
         printf("usage: llvmbc-dump <ifile>\n");
         return 0;
     }
