@@ -8,7 +8,7 @@ make
 
 ## Usage
 
-src/llvmbc-dump tests/src/test
+> src/llvmbc-dump tests/src/test
 
 ## TODO
 
