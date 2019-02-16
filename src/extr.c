@@ -13,8 +13,7 @@ void extract(byte* ptr, int64_t len) {
 	Elf64_Shdr *s;
 	byte *bc;
 	size_t sz;
-	int i, fd;
-	int64_t w;
+	int i;
 	byte c;
 	char *n;
 
