@@ -10,6 +10,12 @@ make
 
 > src/llvmbc-dump tests/src/test
 
+## Example
+
+![command](img/llvmbc-dump.png)
+
+![result](img/llvmbc-example.png)
+
 ## TODO
 
 * CMakefiles
