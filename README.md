@@ -1,7 +1,5 @@
 # llvmbc dump
 
-## Description
-
 Simple tool that extracts LLVM bitcode modules from ELF binaries compiled with "-fembed-bitcode".
 
 ## Compile
