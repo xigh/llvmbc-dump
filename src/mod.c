@@ -44,6 +44,12 @@ void readmod(byte *bc, int64_t sz) {
     id += 1;
     snprintf(outName, 256, "%05d-%s.ll", id, modName);
 
+	for (int i = 0; outName[i] != 0; i++) {
+		if (outName[i] == '/') {
+			outName[i] = '-';
+		}
+	}
+
     char *err = 0;
     LLVMBool saved = LLVMPrintModuleToFile(llMod, outName, &err);
     if (saved != 0) {
@@ -87,21 +93,10 @@ void readmod(byte *bc, int64_t sz) {
         LLVMBool isDecl = LLVMIsDeclaration(llVal);
         printf("\t%c: %s: %s\n", isDecl ? 'D' : 'F', fnName, LLVMPrintTypeToString(tyRef));
 
-        // const char *fnValue = LLVMPrintValueToString(llVal);
-        // printf("\t%s\n", fnValue);
-
-        /*
-        LLVMBool b = LLVMIsUndef(llVal);
-        if (b != 0) {
-            printf("\t\tundef\n");
-        }
-
-        unsigned p = LLVMCountParams(llVal);
-        printf("\t\tparams: %d\n", p);
-        */
-
-        // 
-        // LLVMTypeKind typeKind = LLVMGetTypeKind(typeRef);
+        // if (isDecl == 0) {
+        //    analyseFn(llVal);
+        // }
+        
         llVal = LLVMGetNextFunction(llVal);
     }
 
